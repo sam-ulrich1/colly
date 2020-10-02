@@ -119,9 +119,9 @@ func (c *CDPDriver) Do(request *http.Request, bodySize int, checkHeadersFunc col
 	var body string
 	err := chromedp.Run(c.ctx,
 		network.Enable(),
-		network.SetExtraHTTPHeaders(network.Headers(map[string]interface{}{
+		network.SetExtraHTTPHeaders(network.Headers{
 			"User-Agent": request.Header.Get("User-Agent"),
-		})),
+		}),
 		chromedp.Navigate(request.URL.String()),
 		chromedp.ActionFunc(func(ctx context.Context) error {
 			node, err := dom.GetDocument().Do(ctx)
