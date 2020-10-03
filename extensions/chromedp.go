@@ -19,7 +19,7 @@ import (
 	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/chromedp"
 
-	"github.com/gocolly/colly/v2"
+	"github.com/sam-ulrich1/colly/v2"
 )
 
 type CDPDriver struct {
